@@ -22,17 +22,17 @@ public class Professor {
 //        calculo do salário Base
         salarioBase = (totalDeAulas * 4.5) * valorDaAula;
         if (titulo.equalsIgnoreCase("mestre")){
-            salarioBase += salarioBase * (8.5/100);
+            salarioBase += salarioBase * 8.5/100;
         }
         else if(titulo.equalsIgnoreCase("doutor")){
-            salarioBase += salarioBase * (12/100);
+            salarioBase += salarioBase * 12/100;
         }
 
 //    cálculo da hora atividade
         horaAtividade = salarioBase * 5/100;
 
 //    descanso remunerado
-        descansoRemunerado = (salarioBase * horaAtividade) / 6;
+        descansoRemunerado = (salarioBase + horaAtividade) / 6;
 
         return salarioBase + horaAtividade + descansoRemunerado;
     }
